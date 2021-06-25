@@ -7,11 +7,12 @@ module Functions
 
 import Passages
 import Data.IORef
+import Data.Char
 import System.IO.Unsafe(unsafePerformIO)
 
 find :: String->[String]->Bool
 find word [] = False
-find word (x:xs) | word == x = True
+find word (x:xs) | word == (map toLower x) = True
                  | otherwise = find word xs 
 
 identifyKeywords :: Passage->[String]->Bool
