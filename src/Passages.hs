@@ -53,7 +53,7 @@ stealTreasuresPassage = Passage 19 "Al tratar de robar los tesoros, los enanos t
 
 chapter2InicialPassage = Passage 20 "Capítulo 2\nUn día Odín, Hoenir y tú deciden hacer una excursión hacia el bosque de Mitgard. Por el camino cazan y deciden asar un ciervo. Cuando encienden el fuego se dan cuenta que este no quemaba. Una extraña brisa provenía de un árbol cercano." ["siguiente"] [treeLookPassage]
 
-treeLookPassage = Passage 21 "Cuando miran hacia el árbol notan que hay un águila posada la cual parece estar usando magia. Como el águila parece mágica posiblemente hable o bien podrías tratar de espantarla para ver si los deja en paz." ["mirar","árbol"] [talkEaglePassage]
+treeLookPassage = Passage 21 "Cuando miran hacia el árbol notan que hay un águila posada la cual parece estar usando magia. Como el águila parece mágica posiblemente hable o bien podrías tratar de espantarla para ver si los deja en paz." ["mirar","árbol"] [talkEaglePassage,scarAwayEaglePassage]
 
 talkEaglePassage = Passage 22 "Al hablar con el águila esta les dice que les dejará en paz a cambio de un buen trozo del asado. Aceptarás o rechazarás la propuesta del águila?" ["hablar","águila"] [acceptEaglePassage]
 
