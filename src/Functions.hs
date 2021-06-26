@@ -20,7 +20,7 @@ find word (x:xs) | word == (map toLower x) = True
 
 -- Identify keywords of a passage in a list of words
 identifyKeywords :: Passage -> [String] -> Bool
-identifyKeywords passage words = all (\x -> find x words) (keywords passage)    
+identifyKeywords passage words = all (\x -> (any (\y -> find y words) x)) (getSym passage)    
 
 -- Get the next passage 
 next :: Passage -> [String] -> Passage
@@ -32,7 +32,7 @@ actualPassage :: IORef Passage
 actualPassage = unsafePerformIO(newIORef inicialPassage)
 {-# NOINLINE actualPassage #-}
 
-changePassage ::Passage->IO Passage
+changePassage :: Passage->IO Passage
 changePassage passage = atomicModifyIORef' actualPassage (\p->(passage,passage))
 
 obtainPassage :: IO Passage
