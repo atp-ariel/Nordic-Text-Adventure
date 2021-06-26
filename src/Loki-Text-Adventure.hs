@@ -7,7 +7,8 @@ import GHC.IO.Encoding
 import Distribution.System
 
 main = do
-    when (not isWindows) $ setLocaleEncoding utf8
+    -- define the encoder depending on the operating system
+    setEncoding
     passage <- obtainPassage
     putStrLn (text passage)
     unless (length (nextPossiblePassages passage)==0) $ do
@@ -26,3 +27,6 @@ isWindows :: Bool
 isWindows = case buildOS of
     Windows -> True
     _       -> False
+
+setEncoding :: IO()
+setEncoding = do when (not isWindows) $ setLocaleEncoding utf8
