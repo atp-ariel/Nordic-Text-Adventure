@@ -2,7 +2,8 @@ module Functions
 (
     next,
     obtainPassage,
-    updatePassage
+    updatePassage,
+    find
 ) where
 
 import Synonyms
@@ -43,4 +44,4 @@ updatePassage actualP nextP | nextP == actualP = (changePassage actualP)
 
 -- Return a list of all synonyms of passage's keywords
 getSym :: Passage -> [[String]]
-getSym passage = filter () (map (\x -> sym x) allSynonyms)
+getSym passage = filter (\y -> find (head y) (keywords passage)) (map (\x -> sym x) allSynonyms)
