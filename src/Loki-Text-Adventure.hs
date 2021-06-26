@@ -4,9 +4,10 @@ import Data.Char
 import Functions
 import Passages
 import GHC.IO.Encoding
+import Distribution.System
 
 main = do
-    setLocaleEncoding utf8
+    when (not isWindows) $ setLocaleEncoding utf8
     passage <- obtainPassage
     putStrLn (text passage)
     unless (length (nextPossiblePassages passage)==0) $ do
@@ -21,4 +22,7 @@ main = do
                 updatePassage passage auxPassage
                 main
     
-    
+isWindows :: Bool
+isWindows = case buildOS of
+    Windows -> True
+    _       -> False
