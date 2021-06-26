@@ -34,5 +34,5 @@ obtainPassage :: IO Passage
 obtainPassage = readIORef actualPassage
 
 updatePassage :: Passage -> Passage -> IO Passage
-updatePassage actualP nextP | nextP == actualP = (changePassage actualP)
+updatePassage actualP nextP | (pid nextP) == (pid actualP) = (changePassage actualP)
                             | otherwise = (changePassage nextP)
