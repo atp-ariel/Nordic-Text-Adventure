@@ -22,3 +22,11 @@ cabal.project.local
 cabal.project.local~
 .HTF/
 .ghc.environment.*
+
+# documentation LaTex ignore
+doc/Informe/*.aux
+doc/Informe/*.dvi
+doc/Informe/*.log
+doc/Informe/*.gz
+
+
