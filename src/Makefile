@@ -1,5 +1,5 @@
 compile:
-	ghc Proyecto.hs -o bin/LokiTextAdventure.exe -odir bin -hidir bin
+	ghc Loki-Text-Adventure.hs -o "bin/Loki Text Adventure.exe" -odir bin -hidir bin
 
 run: compile
-	./bin/LokiTextAdventure.exe
+	"./bin/Loki Text Adventure.exe"
