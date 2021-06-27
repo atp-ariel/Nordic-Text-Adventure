@@ -48,7 +48,7 @@ SEGUNDO PROYECTO DE PROGRAMACIÓN DECLARATIVA
 	
 \section{Introducción}
 
-En el siguiente documento se realizará la presentación de la aplicación \textbf{Loki Text Adventure}. Para esto se divide el resto del documento en secciones. En una primera sección se presenta la historia elaborada para la aplicación y en una posterior sección se explica cómo un usuario puede interactuar con la aplicación. Posteriormente se explica la implementación de la aplicación: estrategia que se siguió y descripción de los módulos implementados.
+En el siguiente documento se realizará la presentación de la aplicación \textbf{Loki Text Adventure}. Para esto se divide el resto del documento en secciones. En una primera sección se presenta la historia elaborada para la aplicación y en una posterior sección se explica cómo un usuario puede interactuar con la aplicación. Posteriormente se explica la implementación de la aplicación: estrategia que se siguió y descripción de los módulos implementados. Finalmente ilustraremos mediante im\'agenes una posible aventura que pudiera hacer el usuario.
 
 \section{Historia elaborada para la aplicación}
 
@@ -179,6 +179,26 @@ Este es el m\'odulo principal de la aplicaci\'on. En este m\'odulo primero se ti
 
 Se tienen dos funciones para auxiliar el proceso de imprimir textos en la consola: \verb|printStory| y \verb|printError|, estas funciones reciben un texto y lo imprimen en color verde y rojo respectivamente. Para imprimir en colores se usan los códigos ANSI siguientes: Verde = \verb|\x1b[32m|, Rojo = \verb|\x1b[31m|, y para volver al estilo normal se utiliza el código \verb|\x1b[0m|.
 
-Entonces se tiene tambi\'en la funci\'on \verb|main|, la principal de toda la aplicaci\'on. En esta funci\'on primeramente en dependencia del sistema operativo se cambia o no la configuraci\'on de codificaci\'on de caracteres. Luego se obtiene el pasaje actual mediante la funci\'on \verb|obtainPassage|, se guarda en la variable \verb|passage| y de este se imprime su texto correspondiente. Luego, a menos que este sea un pasaje final, se espera a que el usuario propicie una entrada. En caso de ser un pasaje final se termina la ejecuci\'on. Entonces si la entrada propiciada por el usuario es \verb|salir| se detiene la ejecuci\'on; en cualquier otro caso se pasa a obtener el siguiente pasaje mediante la funci\'on \verb|next| y se guarda en la variable \verb|auxPassage|. Entonces se comprueba si el pasaje actual y el hallado por la funci\'on coinciden. De ser as\'i es porque el usuario no tecleó una entrada que permitiera el avance a un nuevo pasaje y en este caso se le escribe un mensaje de advertencia con las posibles causas del fracaso en el avance y se llama al m\'etodo \verb|main|. En caso de que no coincidan, es porque hubo un avance y por tanto se actualiza el estado actual mediante la funci\'on \verb|changePassage| utilizando como par\'ametro \verb|auxPassage|. Luego de esto se llama al m\'etodo \verb|main|. Obs\'ervese que la aplicaci\'on solo termina su ejecuci\'on si se alcanza un pasaje final o el usuario tecla la palabra \verb|salir|.   
+Entonces tenemos tambi\'en la funci\'on \verb|main|, la principal de toda la aplicaci\'on. En esta funci\'on primeramente en dependencia del sistema operativo se cambia o no la configuraci\'on de codificaci\'on de caracteres. Luego se obtiene el pasaje actual mediante la funci\'on \verb|obtainPassage|, se guarda en la variable \verb|passage| y de este se imprime su texto correspondiente. Luego, a menos que este sea un pasaje final, se espera a que el usuario propicie una entrada. En caso de ser un pasaje final se termina la ejecuci\'on. Entonces si la entrada propiciada por el usuario es \verb|salir| se detiene la ejecuci\'on; en cualquier otro caso se pasa a obtener el siguiente pasaje mediante la funci\'on \verb|next| y se guarda en la variable \verb|auxPassage|. Entonces comprobamos si el pasaje actual y el hallado por la funci\'on coinciden. De ser as\'i es porque el usuario no tecleo una entrada que permitiera el avance a un nuevo pasaje y en este caso se le escribe un mensaje de advertencia con las posibles causas del fracaso en el avance y se llama al m\'etodo \verb|main|. En caso de que no coincidan, es porque hubo un avance y por tanto se actualiza el estado actual mediante la funci\'on \verb|changePassage| utilizando como par\'ametro \verb|auxPassage|. Luego de esto llamamos al m\'etodo \verb|main|. Obs\'ervese que la aplicaci\'on solo termina su ejecuci\'on si se alcanza un pasaje final o el usuario tecla la palabra \verb|salir|.
+
+\section{Ejemplo de una partida completa}
+
+A continuaci\'on ilustraremos mediante im\'agenes el desarrollo de una posible aventura completa.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width =15.0cm]{./img/Historia1.png}
+		\includegraphics[width =15.0cm]{./img/Historia2.png}
+		
+	\end{center}
+\end{figure}
+
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width =15.0cm]{./img/Historia3.png}
+		\includegraphics[width =15.0cm]{./img/Historia4.png}
+	\end{center}
+\end{figure}
 
 \end{document}
