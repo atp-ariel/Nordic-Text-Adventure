@@ -73,7 +73,7 @@ allSynonyms =
         Synonyms "a" ["a", "en"],
         Synonyms "de" ["de"],
         Synonyms "con" ["con"],
-        Synonyms "no" ["no"],
+        Synonyms "no" ["no","negarme"],
         Synonyms "al" ["al"],
         Synonyms "un" ["un"],
         Synonyms "hacia" ["hacia", "al"],
