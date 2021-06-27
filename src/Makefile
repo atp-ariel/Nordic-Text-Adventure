@@ -3,3 +3,9 @@ compile:
 
 run: compile
 	"./bin/Loki Text Adventure.exe"
+
+compile-test: 
+	ghc Test.hs -o test/Test.exe -odir test -hidir test
+
+test: compile-test
+	test/Test.exe

@@ -2,7 +2,9 @@ module Functions
 (
     next,
     obtainPassage,
-    changePassage
+    changePassage, 
+    find, 
+    getSym
 ) where
 
 import Synonyms

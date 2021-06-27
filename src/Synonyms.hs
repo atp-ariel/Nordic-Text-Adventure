@@ -42,7 +42,7 @@ allSynonyms =
         Synonyms "mantenerme" ["mantenerme", "ser", "seguir"], 
         Synonyms "yegua" ["yegua", "caballo", "potro", "ponny"], 
         Synonyms "caballo" [ "caballo", "potro", "ponny"], 
-        Synonyms "casa" ["casa", "residencia", "vivienda", "domicilio", "morada"],
+        Synonyms "casa" ["casa", "residencia", "vivienda", "domicilio", "morada", "choza", "tienda"],
         Synonyms "habitación" ["habitación", "cuarto", "aposento", "dormitorio", "salón", "alcoba"],
         Synonyms "cuchillo" ["cuchillo", "puñal", "navaja", "daga"],
         Synonyms "cabello" ["cabellera", "pelo", "melena", "cabello"], 
