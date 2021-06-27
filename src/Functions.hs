@@ -15,7 +15,7 @@ import System.IO.Unsafe(unsafePerformIO)
 -- Find a word in a list of words
 find :: String -> [String] -> Bool
 find word [] = False
-find word (x:xs) | word == (map toLower x) = True
+find word (x:xs) | (map toLower word) == (map toLower x) = True
                  | otherwise = find word xs 
 
 -- Identify keywords of a passage in a list of words

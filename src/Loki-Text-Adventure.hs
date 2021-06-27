@@ -5,19 +5,20 @@ import Functions
 import Passages
 import GHC.IO.Encoding
 import Distribution.System
+import System.IO
 
 main = do
     -- define the encoder depending on the operating system
     setEncoding
+    hSetBuffering stdout NoBuffering
     passage <- obtainPassage
-    putStrLn (text passage)
+    printStory (text passage)
     unless (length (nextPossiblePassages passage)==0) $ do
-        sentence <- getLine
+        sentence <- (putStr ">> " >> getLine)
         unless ((map toLower sentence)=="salir") $ do
-            putStrLn ""
             let auxPassage = next passage (endBy " " sentence) 
             if (pid auxPassage) == (pid passage) then do
-                putStrLn "Acción inválida o irreconocible. Quizás faltan palabras o la acción no es esperada. Chequea también la ortografía de las palabras. No avance"
+                printError "Acción inválida o irreconocible. Quizás faltan palabras o la acción no es esperada. Chequea también la ortografía de las palabras. No avance"
                 main
             else do
                 updatePassage passage auxPassage
@@ -30,3 +31,9 @@ isWindows = case buildOS of
 
 setEncoding :: IO()
 setEncoding = do when (not isWindows) $ setLocaleEncoding utf8
+
+printStory :: String -> IO()
+printStory text = putStrLn $ "\x1b[32m" ++ text ++ "\x1b[0m"
+
+printError :: String -> IO()
+printError text = putStrLn $ "\x1b[31m" ++ text ++ "\x1b[0m"
