@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.5.20)  27 JUN 2021 05:57
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.5.20)  27 JUN 2021 08:28
 entering extended mode
 **Informe*Proyecto*2.tex
 
@@ -806,20 +806,45 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count134
+\lst@gtempboxa=\box38
+\lst@token=\toks41
+\lst@length=\count135
+\lst@currlwidth=\dimen181
+\lst@column=\count136
+\lst@pos=\count137
+\lst@lostspace=\dimen182
+\lst@width=\dimen183
+\lst@newlines=\count138
+\lst@lineno=\count139
+\lst@maxwidth=\dimen184
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count140
+\lst@skipnumbers=\count141
+\lst@framebox=\box39
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
 ("D:\Escuela\Ciencias de la Computacion\3 Año\Primer Semestre\Programacion Dec
 larativa\Nordic-Text-Adventure\doc\Informe\Informe Proyecto 2.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -857,90 +882,111 @@ LaTeX Font Info:    ... okay on input line 11.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count134
-\scratchdimen=\dimen181
-\scratchbox=\box38
-\nofMPsegments=\count135
-\nofMParguments=\count136
-\everyMPshowfont=\toks41
-\MPscratchCnt=\count137
-\MPscratchDim=\dimen182
-\MPnumerator=\count138
-\makeMPintoPDFobject=\count139
-\everyMPtoPDFconversion=\toks42
+\scratchcounter=\count142
+\scratchdimen=\dimen185
+\scratchbox=\box40
+\nofMPsegments=\count143
+\nofMParguments=\count144
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count145
+\MPscratchDim=\dimen186
+\MPnumerator=\count146
+\makeMPintoPDFobject=\count147
+\everyMPtoPDFconversion=\toks43
 ) ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 16.
+\c@lstlisting=\count148
+
+<./img/logo-matcom.jpg, id=4, 722.7pt x 581.17125pt>
+File: ./img/logo-matcom.jpg Graphic file (type jpg)
+
+<use ./img/logo-matcom.jpg>
+Package pdftex.def Info: ./img/logo-matcom.jpg used on input line 34.
+(pdftex.def)             Requested size: 142.26378pt x 114.40538pt.
+ [1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/Escuela/Ciencias de la
+ Computacion/3 Año/Primer Semestre/Programacion Declarativa/Nordic-Text-Advent
+ure/doc/Informe/img/logo-matcom.jpg>]
+LaTeX Font Info:    Try loading font information for U+msa on input line 59.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 16.
+LaTeX Font Info:    Try loading font information for U+msb on input line 59.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-<./img/Inicial.png, id=4, 1245.65375pt x 146.5475pt>
+<./img/Inicial.png, id=11, 932.88525pt x 98.16675pt>
 File: ./img/Inicial.png Graphic file (type png)
  <use ./img/Inicial.png>
-Package pdftex.def Info: ./img/Inicial.png used on input line 36.
-(pdftex.def)             Requested size: 426.79134pt x 50.2101pt.
+Package pdftex.def Info: ./img/Inicial.png used on input line 67.
+(pdftex.def)             Requested size: 426.79134pt x 44.9101pt.
 
-[1
-
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/Escuela/Ciencias de la
- Computacion/3 Año/Primer Semestre/Programacion Declarativa/Nordic-Text-Advent
-ure/doc/Informe/img/Inicial.png>]
-<./img/Avance.png, id=15, 1232.605pt x 180.675pt>
+<./img/Avance.png, id=12, 929.27174pt x 123.46124pt>
 File: ./img/Avance.png Graphic file (type png)
  <use ./img/Avance.png>
-Package pdftex.def Info: ./img/Avance.png used on input line 45.
-(pdftex.def)             Requested size: 426.79134pt x 62.55899pt.
+Package pdftex.def Info: ./img/Avance.png used on input line 79.
+(pdftex.def)             Requested size: 426.79134pt x 56.70242pt.
 
-<./img/No_avance.png, id=16, 1232.605pt x 295.1025pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[1 <D:/Escuela/Ciencias de la Computacion/3 Año/Primer Semestre/Programacion D
+eclarativa/Nordic-Text-Adventure/doc/Informe/img/Inicial.png>]
+<./img/No_avance.png, id=18, 936.49875pt x 210.18526pt>
 File: ./img/No_avance.png Graphic file (type png)
 
 <use ./img/No_avance.png>
-Package pdftex.def Info: ./img/No_avance.png used on input line 53.
-(pdftex.def)             Requested size: 426.79134pt x 102.1797pt.
- <./img/Decision.png, id=17, 1228.59pt x 58.2175pt>
+Package pdftex.def Info: ./img/No_avance.png used on input line 89.
+(pdftex.def)             Requested size: 426.79134pt x 95.78838pt.
+ <./img/Decision.png, id=19, 928.6695pt x 39.14626pt>
 File: ./img/Decision.png Graphic file (type png)
 
 <use ./img/Decision.png>
-Package pdftex.def Info: ./img/Decision.png used on input line 63.
-(pdftex.def)             Requested size: 426.79134pt x 20.22363pt.
+Package pdftex.def Info: ./img/Decision.png used on input line 101.
+(pdftex.def)             Requested size: 426.79134pt x 17.99016pt.
  [2 <D:/Escuela/Ciencias de la Computacion/3 Año/Primer Semestre/Programacion 
 Declarativa/Nordic-Text-Adventure/doc/Informe/img/Avance.png> <D:/Escuela/Cienc
 ias de la Computacion/3 Año/Primer Semestre/Programacion Declarativa/Nordic-Te
 xt-Adventure/doc/Informe/img/No_avance.png> <D:/Escuela/Ciencias de la Computac
 ion/3 Año/Primer Semestre/Programacion Declarativa/Nordic-Text-Adventure/doc/I
 nforme/img/Decision.png>]
-<./img/Passage.png, id=25, 940.51375pt x 46.1725pt>
-File: ./img/Passage.png Graphic file (type png)
- <use ./img/Passage.png>
-Package pdftex.def Info: ./img/Passage.png used on input line 85.
-(pdftex.def)             Requested size: 426.79134pt x 20.95213pt.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
+File: lstlang2.sty 2004/09/05 1.3 listings language file
+)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 135.
 
-[3 <D:/Escuela/Ciencias de la Computacion/3 Año/Primer Semestre/Programacion D
-eclarativa/Nordic-Text-Adventure/doc/Informe/img/Passage.png>] [4]
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 135.
+ [3] [4] [5]
 ("D:\Escuela\Ciencias de la Computacion\3 Año\Primer Semestre\Programacion Dec
 larativa\Nordic-Text-Adventure\doc\Informe\Informe Proyecto 2.aux") ) 
 Here is how much of TeX's memory you used:
- 17635 strings out of 494045
- 401702 string characters out of 3145969
- 518409 words of memory out of 3000000
- 20567 multiletter control sequences out of 15000+200000
- 12403 words of font info for 48 fonts, out of 3000000 for 9000
+ 19813 strings out of 494045
+ 430125 string characters out of 3145969
+ 541660 words of memory out of 3000000
+ 22720 multiletter control sequences out of 15000+200000
+ 10925 words of font info for 41 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 56i,7n,74p,1010b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,6n,74p,1143b,1767s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb>
-Output written on "Informe Proyecto 2.pdf" (4 pages, 169935 bytes).
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on "Informe Proyecto 2.pdf" (6 pages, 212656 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
+ 53 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

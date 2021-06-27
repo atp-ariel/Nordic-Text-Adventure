@@ -7,103 +7,174 @@
 \usepackage{graphicx}
 \usepackage{tikz,pgfplots}
 \usepackage{amsmath}
+\usepackage{listings}
 
 \begin{document}
-	\title{Segundo Proyecto de Programaci\'on Declarativa}
-	\author{Carlos Toledo Silva C-311\\
-		    Ariel A. Triana P\'erez C-311}
-	\date{}
-	\maketitle
+
+% Meta informations
+\title{Loki Text Adventure}
+\author{Carlos Toledo Silva C-311\\
+		    Ariel Alfonso Triana Pérez C-311}
+\date{2021}
+
+\makeatletter
+\begin{titlepage}
+\centering
+
+\vspace{5cm}
+
+{ \Huge \textbf{\@title}}
+
+\vspace{1cm}
+
+SEGUNDO PROYECTO DE PROGRAMACIÓN DECLARATIVA
+
+\vspace{5cm}
+
+\includegraphics[width=5cm]{./img/logo-matcom.jpg}
+
+\vspace{5cm}
+
+\textbf{Equipo de desarrollo:}
+
+ \@author
+
+\vspace{1cm}
+
+\@date
+\end{titlepage}
 	
-\section{Introducci\'on}
 
-En el siguiente documento se realizar\'a la presentaci\'on de la aplicaci\'on Loki Text Adventure. Para esto dividiremos el resto del documento en secciones. En una primera secci\'on estaremos hablando sobre la historia elaborarda para la aplicaci\'on y en una posterior secci\'on nos referiremos a como un usuario interact\'ua con la aplicaci\'on. Posteriormente nos estaremos refiriendo a la implementaci\'on de la aplicaci\'on: estrategia que se sigui\'o, descripci\'on de los m\'odulos implementados y como se aprovecharon las caracter\'isticas propias de Haskell para dicha implementaci\'on.
+	
+\section{Introducción}
 
-\section{Historia elaborada para la aplicaci\'on}
+En el siguiente documento se realizará la presentación de la aplicación \textbf{Loki Text Adventure}. Para esto se divide el resto del documento en secciones. En una primera sección se presenta la historia elaborarda para la aplicación y en una posterior sección se explica cómo un usuario interactúa con la aplicación. Posteriormente se explica la implementación de la aplicación: estrategia que se siguió, descripción de los módulos implementados y cómo se aprovecharon las características propias de Haskell para dicha implementación.
 
-La hostoria que se narra en la aplicaci\'on est\'a basada en la mitolog\'ia n\'ordica. El usuario asume el papel de Loki: un dios embaucador de esta mitolog\'ia y uno de los dioses m\'as conocidos. El usuario, metido en el papel de Loki, tomar\'a parte en una historia en la que pasar\'a por diferentes aventuras y dificultades, donde las decisiones que tome y los actos que realicen tendr\'an una influencia directa en la historia del mundo.
+\section{Historia elaborada para la aplicación}
 
-V\'alido aclarar que aunque la historia est\'a basada en la mitolog\'ia n\'ordica, muchos de los pasajes que en ella se narran no ocurren exactamente igual, ni siquiera en el orden correspondiente a como est\'an realmente recogidos en la mitolog\'ia. Otros muchos ni siquiera ocurrieron y son invenci\'on de los autores. De esta forma se ha adaptado la historia de Loki y otros personajes n\'ordicos para lograr hacer una historia entretenida y atractia para el usuario.
+La historia que se narra en la aplicación está basada en la mitología nórdica. El usuario asume el papel de Loki: un dios embaucador de esta mitología y uno de los dioses más conocidos. El usuario, metido en el papel de Loki, tomará parte en una historia en la que pasará por diferentes aventuras y dificultades, donde las decisiones que tome y los actos que realicen tendrán una influencia directa en la historia del mundo.
 
-La historai est\'a compuesta de 3 cap\'itulos, seguidos uno a continuaci\'on del otro. Es decir que para el usuario poder llegar el cap\'itulo $i+1$ deber\'a haber triunfado en el cap\'itulo $i$. Adem\'as cada cap\'itulo cuenta con varios finales; en algunos el jugador sale triunfante pero en otros le podr\'ia acabar perdiendo la vida. Por esto motivo el jugador deber\'a escoger sabiamente, si es que quiere avanzar lo m\'as posible.  
+Válido aclarar que aunque la historia está basada en la mitología nórdica, muchos de los pasajes que en ella se narran no ocurren exactamente igual, ni siquiera en el orden correspondiente a como están realmente recogidos en la mitología. Otros muchos ni siquiera ocurrieron y son invención de los autores. De esta forma se ha adaptado la historia de Loki y otros personajes nórdicos para lograr hacer una historia entretenida y atractiva para el usuario.
 
-\section{Interacci\'on entre el jugador y la aplicaci\'on}
+La historia está compuesta de 3 capítulos, seguidos uno a continuación del otro. Es decir que para el usuario poder llegar el capítulo $i+1$ deberá haber triunfado en el capítulo $i$. Además cada capítulo cuenta con varios finales; en algunos el jugador sale triunfante pero en otros este podría acabar perdiendo la vida. Por esto motivo el jugador deberá escoger sabiamente, si es que quiere avanzar lo más posible.  
 
-Cuando se ejecuta la aplicaci\'on (ya compilada) lo primero que se ve es lo siguiente:
+\section{Interacción entre el jugador y la aplicación}
+
+Cuando se ejecuta la aplicación (ya compilada) lo primero que se ve es lo siguiente:
 
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width =15.0cm]{./img/Inicial.png}
+
+        \caption{Inicio de la historia \label{fig:init}}
 	\end{center}
 \end{figure}
 
-Aqu\'i es donde comienza la historia. A medida que el personaje avance en la historia le ir\'an saliendo texto similares a estos. Para poder avanzar el usuario deber\'a utilizar la informaci\'on mostrada en cada uno de los textos y dar una respuesta l\'ogica y bien escrita mediante alguna acci\'on. Es importante recalcar que las acci\'on se deben expresar mediante infinitivos: entrar, aceptar, hablar, etc y que por supuesto estos se combinen con las otras palabras necesarias para elaborar una idea coherente. Tambi\'en es importante recalcar que las acciones sobre el propio jugador deben ir seguidas del pronombre personal me; ejemplo: transformarme, quedarme, etc.
+Aquí es donde comienza la historia. A medida que el personaje avance en la historia le irán saliendo texto similares a estos. Para poder avanzar el usuario deberá utilizar la información mostrada en cada uno de los textos y dar una respuesta lógica y bien escrita mediante alguna acción. Es importante señalar que las acción se deben expresar mediante infinitivos: \textit{entrar}, \textit{aceptar}, \textit{hablar}, etc y que por supuesto estos se combinen con las otras palabras necesarias para elaborar una idea coherente. También es importante recalcar que, las acciones sobre el propio jugador deben ir seguidas del pronombre personal me; ejemplo: \textit{transformarme}, \textit{quedarme}, etc.
 
-Por ejemplo partiendo del texto inicial podemos hacer lo siguiente:
+Por ejemplo, partiendo del texto inicial de la historia (Fig \ref{fig:init}) se puede hacer lo siguiente:
+
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width =15.0cm]{./img/Avance.png}
+
+        \caption{Avance de la historia basado en la decisión del usuario}
 	\end{center}
 \end{figure}
 
-Obs\'ervese como al escribir una acci\'on l\'ogica correctamente hemos avanzado en la historia. Si por el contrario escribimos una acci\'on sin sentido o no escrita correctamente (ya sea por palabras incorrectamente escritas o falta de las mismas), la aplicaci\'on puede que no reconozca lo que el usuario quiere decir y si esto pasa alertar\'a de esto y volver\'a a imprimir el \'ultimo texto impreso. A continuaci\'on mostramos un ejemplo:
+Obsérvese cómo al escribir una acción lógica correctamente se ha avanzado en la historia. Si por el contrario se escribe una acción sin sentido o no escrita correctamente (ya sea por palabras mal escritas o falta de las mismas), la aplicación puede que no reconozca lo que el usuario quiere decir y si ocurre este caso entonces se alertará con un mensaje y volverá a imprimir el último texto de la historia. A continuación se muestra un ejemplo:
 
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width =15.0cm]{./img/No_avance.png}
+
+        \caption{No se reconoce la decisión del jugador}
 	\end{center}
 \end{figure}
 
-F\'ijese que cuando sali\'o el cartel por primera vez el usuario escribi\'o mal la palabra "Entrar" y por este motivo la acci\'on no se pudo reconocer. 
+Fíjese que cuando salió el cartel por primera vez el usuario escribió mal la palabra ``Entrar'' y por este motivo la acción no se pudo reconocer. 
 
-Tambi\'en durante el juego aparecer\'an situaciones en las que el usuario tendr\'a que escoger entre varias opciones. De esta forma la aplicaci\'on posibilita que el usuario pueda transitar por diferentes pasajes en base a sus decisiones. Cuan larga pueda ser la experiencia del jugador, tambi\'en depender\'a de las decisiones que tome. Una ''mala'' decisi\'on, por decirlo de alguna forma, podr\'ia provocar que el usuario terminar\'a el juego antes de terminar los 3 cap\'itulos. Veamos un ejemplo donde el usuario se enfrenta a una decisi\'on: 
+También durante el juego aparecerán situaciones en las que el usuario tendrá que escoger entre varias opciones. De esta forma la aplicación posibilita que el usuario pueda transitar por diferentes pasajes en base a sus decisiones. Cuan larga pueda ser la experiencia del jugador, también dependerá de las decisiones que tome. Una ``mala'' decisión, por decirlo de alguna forma, podría provocar que el usuario termine el juego antes de completar los 3 capítulos. Se muestra un ejemplo donde el usuario se enfrenta a una decisión: 
 
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width =15.0cm]{./img/Decision.png}
+
+        \caption{Momento de trifurcación de la historia, en dependencia de la decisión del jugador}
 	\end{center}
 \end{figure}
 
-En este caso el jugador podr\'a escoger entre convencer, hablar o enfrentar a Thor. En dependencia de lo que teclee el usuario se mover\'a a uno u otro pasaje.
+En este caso el jugador podrá escoger entre convencer, hablar o enfrentar a Thor. En dependencia de lo que decida el usuario se moverá a uno u otro pasaje.
 
-\section{Implementaci\'on}
+\section{Implementación}
 
-\subsection{Estrategia de implementaci\'on}
+A continuación se explica la estrategia de implementación de la aplicación, cómo se utilizaron las ventajas de Haskell como pattern matching en el desarrollo y se explica la funcionalidad de cada módulo de la aplicación.
 
-Como toda historia, esta est\'a compuesta por diferentes pasajes. Por este motivo definimos un tipo ''passage'' para representar los diferentes pasajes. M\'as adelante veremos como est\'a implementado este tipo. En todo momento el jugador se va encontrar transitando en un determinado pasaje. Para cambiar de pasaje, lo cual provoca un avance en la historia, el jugador teclea una sentencia, a la cual se realiza un an\'alisis para determinar si se cambia a alg\'un otro pasaje o si la historia se mantiene en el mismo. Cuando se alcanza alg\'un pasaje ''final'' la ejecuci\'on de la aplicaci\'on se detiene.
+\subsection{Estrategia de implementación}
 
-\subsection{M\'odulos implementados}
+Como toda historia, la presente está compuesta por diferentes pasajes. Por este motivo se define un tipo \verb|Passage| para representar los diferentes pasajes. Más adelante se verá como está implementado este tipo. En todo momento el jugador se va encontrar transitando en un determinado pasaje. Para cambiar de pasaje, lo cual provoca un avance en la historia, el jugador introduce una sentencia, a la cual se realiza un análisis para determinar si se cambia a algún otro pasaje o si la historia se mantiene en el mismo. Cuando se alcanza algún pasaje ``final'' la ejecución de la aplicación se detiene.
 
-La implementaci\'on de la aplicaci\'on, para mejor organizaci\'on y comprensi\'on, est\'a dividida en los siguintes m\'odulos: ''Passages'', ''Synonyms'',''Functions'' y ''Loki-Text-Adenture''. En el m\'odulo ''Passages'' est\'a implementada la definici\'on de el tipo ''Passage'', el m\'odulo ''Functios'' se est\'a la implementaci\'on de las funciones que permiten llevar el pasaje actual, el an\'alisis de la entrada del usuario y el cambio o no de un pasaje a otro. Finalmente est\'a el m\'odulo principal ''Loki-Text-Adevneture'' que apoy\'andose de los otros m\'odulos permite el funcionamiento de la aplicaci\'on. A continuaci\'on veremos estos m\'odulos por separado 
+\subsection{Módulos implementados}
 
-\subsubsection{M\'odulo Passages}
+La implementación de la aplicación, para mejor organización y comprensión, está dividida en los siguientes módulos:
 
-Como se mencion\'o anteriormente, en este m\'odulo est\'a definido el tipo ''Passage'' del cual veremos ahora su definici\'on.
+\begin{enumerate}
+    \item[-] \textbf{Passages}: contiene la definición del tipo \verb|Passage|, y todos los pasajes de la historia.
+    \item[-] \textbf{Synonyms}: contiene la definición del tipo \verb|Synonyms|, y todos los sinónimos utilizados en la historia.
+    \item[-] \textbf{Functions}: contiene  la implementación de las funciones que permiten llevar el pasaje actual, el análisis de la entrada del usuario y el cambio o no de un pasaje a otro.
+    \item[-] \textbf{Loki-Text-Adventure}: que apoyándose de los otros módulos permite el funcionamiento de la aplicación.
+\end{enumerate}
+ 
+A continuación se verán al detalle estos módulos y su funcionamiento.
 
-\begin{figure}[h]
-	\begin{center}
-		\includegraphics[width =15.0cm]{./img/Passage.png}
-	\end{center}
-\end{figure}
+\subsubsection{Módulo Passages}
 
-El entero ''pid'' lo utilizamos para comparar pasajes de una forma eficiente. El string ''text'' es el texto correspondiente a un pasaje. Esto es lo que se imprime en pantalla cuando se llega a dicho pasaje. La lista de Passage ''nextPossiblePassages'' son los pasajes a los cuales se puede avanzar a partir del pasaje actual. La lista de string ''keywords'' son las palabras que debe teclear el usuario (o algunas que sean sin\'onimos de estas o que transmitan una idea similar) que permiten a partir de un pasaje espec\'ifico alcanzar el pasaje con esas keywords. O sea si yo el usuario se encuentra en el pasaje $i$ y en la lista ''nextPossiblePassages'' del pasaje $i$ se encuentra el pasaje $j$, par que el usuari\'o pueda pasar del pasaje $i$ al pasaje $j$ deber\'a teclear las palabras que aparecen en la lista ''keywords'' del pasaje $j$ (o algunas que sean sin\'onimos de estas o que transmitan una idea similar). De esta forma es que ocurre el cambio entre pasajes.
+Como se mencionó anteriormente, en este módulo está definido el tipo \verb|Passage| del cual veremos ahora su definición.
 
-De la forma antes descrita, aparecen adem\'as definidos todos los pasajes de la historia. El pasaje inicial es el \'unico que tiene su lista ''keywords'' vac\'ia pues este no se alcanza desde ning\'un otro pasaje. Los pasajes finales, o sea los que no permitan avanzar al jugador m\'as all\'a de ellos, se caracterizan porque su lista de pasajes ''nextPossiblePassages'' es una lista vac\'ia.
+\begin{lstlisting}[language=Haskell, morekeywords={fix}]
+data Passage = Passage {
+        pid :: Int, 
+        text :: String, 
+        keywords :: [String], 
+        nextPossiblePassages :: [Passage]
+    }
+\end{lstlisting}
 
-\subsubsection{M\'odulo Synonyms}
 
-\subsubsection{M\'odulo Functions}
+El entero \verb|pid| se utiliza para comparar pasajes de una forma eficiente. La cadena \verb|text| es el texto correspondiente a un pasaje. Esto es lo que se imprime en pantalla cuando se llega a dicho pasaje. La lista de Passage \verb|nextPossiblePassages| son los pasajes a los cuales se puede avanzar a partir del pasaje actual. La lista de cadenas de texto \verb|keywords| son las palabras que debe teclear el usuario (o algunas que sean sinónimos de estas o que transmitan una idea similar) que permiten a partir de un pasaje específico alcanzar el pasaje con esas keywords. O sea, si  el usuario se encuentra en el pasaje $i$ y en la lista \verb|nextPossiblePassages| del pasaje $i$ se encuentra el pasaje $j$, para que el usuarió pueda pasar del pasaje $i$ al pasaje $j$ deberá teclear las palabras que aparecen en la lista \verb|keywords| del pasaje $j$ (o algunas que sean sinónimos de estas o que transmitan una idea similar). De esta forma es que ocurre el cambio entre pasajes.
 
-En este m\'odulo se encuentran definidas las funciones que permiten el correcto funcionamiento de la aplicaci\'on.
+De la forma antes descrita, aparecen además definidos todos los pasajes de la historia. El pasaje inicial es el único que tiene su lista \verb|keywords| vacía pues este no se alcanza desde ningún otro pasaje. Los pasajes finales, o sea los que no permitan avanzar al jugador más allá de ellos, se caracterizan porque su lista de pasajes \verb|nextPossiblePassages|  es una lista vacía.
 
-La funci\'on ''actualPassage'' permite la creaci\'on de una variable global en la que se guardar\'a en todo momento el pasaje en el cual se encuentra la historia. 
+\subsubsection{Módulo Synonyms}
 
-La funci\'on ''changePassage'' recibe como par\'ametro un ''Passage'' y lo que hace es definir al pasaje actual como el pasaje que se le pasa de entrada.
+Como se había mencionado al inicio de esta sección, el módulo \textbf{Synonyms} contiene la definición de un tipo del mismo nombre que el módulo. Esta definición se presenta a continuación:
 
-La funci\'on ''obtainPassage'' se utiliza para poder obtener el pasaje actual en el que se encuentra la historia.
+\begin{lstlisting}[language=Haskell, morekeywords={fix}]
+data Synonyms = Synonyms { 
+        key :: String, 
+        sym :: [String]
+    } deriving (Eq,Show)
+\end{lstlisting}
 
-\subsubsection{M\'odulo Loki-Text-Adventure}
+Con este tipo se puede definir un ``diccionario de sinónimos'', donde la cadena de texto \verb|key| representa la palabra de la cual se desean conocer los sinónimos y la lista de cadenas \verb|sym| representa los sinónimos de esa palabra.
 
-Este es el m\'odulo principal de la aplicaci\'on. En este m\'odulo primero tenemos dos funciones ''isWindows'' y ''setEncoding''. La primera la utilizamos para saber si la aplicaci\'on se est\'a ejecutando en Windows o no. La segunda es se utiliza para cambiar en el formato de codificaci\'on de caracteres a UTF-8 en caso de que no estemos en Windows. Esto lo hacemos porque nos paso que uno de nostros program\'o en Windows 10 y el otro en Ubuntu 18.04 y si no cambiamos el formato de codificaci\'on de caracteres en Ubuntu la aplicaci\'on no reconoc\'ia los caracteres del Español como las tildes y la ñ. Sin embargo si cambiamos esta codificaci\'on en Windows ocurr\'ia entonces que dichos caracteres no se reconoc\'ian y al no cambiarlo si lo hac\'ian. Por tanto se opt\'o por comprobar si se estaba ejecutando la aplicaci\'on en Windows para cambiar o no la configuraci\'on de codificaci\'on de caracteres.
+Utilizando este tipo se precisó un diccionario de sinónimos para la historia donde los campos \verb|key| son las \verb|keywords| del tipo \verb|Passage| en cuestión, y \verb|sym| representa el todas las palabras que pueden ser utilizadas en lugar de \verb|key|. Todos estos sinónimos se fijan en la lista \verb|allSynonyms|. 
+
+\subsubsection{Módulo Functions}
+
+En este módulo se encuentran definidas las funciones que permiten el correcto funcionamiento de la aplicación. Este módulo depende de los anteriores para su correcto funcionamiento.
+
+La función \verb|actualPassage| permite la creación de una variable global en la que se guardará en todo momento el pasaje en el cual se encuentra la historia. 
+
+La función \verb|changePassage| recibe como parámetro un \verb|Passage| y lo que hace es definir al pasaje actual como el pasaje que se le pasa de entrada.
+
+La función \verb|obtainPassage| se utiliza para poder obtener el pasaje actual en el que se encuentra la historia.
+
+La función \verb|next| se utiliza para obtener el siguiente pasaje de la historia dado el pasaje actual y la entrada del usuario. El funcionamiento es el siguiente se construye una lista que contiene los pasajes que son ``descendientes directos'' del pasaje actual en la historia, cuyas \verb|keywords| están de forma exacta o a través de sinónimos en la entrada del usuario. Si esta lista no contiene elementos entonces se devuelve el pasaje actual, pues la decisión del usuario no se corresponde con las opciones disponibles. Si la lista contiene elementos esto quiere decir que con esa entrada se puede alcanzar cualquiera de los pasajes en la lista por tanto se devuelve el primer elemento. Dicha función utiliza  \verb|identifyKeywords| que realiza el procedimiento de chequear si la entrada del usuario contiene las \verb|keywords| del pasaje o sus sinónimos. Para esto utiliza \verb|getSym| que devuelve todos los sinónimos de cada \verb|keywords| del pasaje, y además utiliza \verb|find| que devuelve un booleano indicando si una cadena de texto está en una lista de cadenas de texto.
+
+
+\subsubsection{Módulo Loki-Text-Adventure}
+
+Este es el módulo principal de la aplicación. En este módulo primero se tienen dos funciones \verb|isWindows| y \verb|setEncoding|. La primera la se utiliza para saber si la aplicación se está ejecutando en Windows o no. La segunda se utiliza para cambiar  el formato de codificación de caracteres a UTF-8 en caso de que no se esté en Windows. Esto  se hace porque que uno de los autores programó en Windows 10 y el otro en Ubuntu 18.04 y si no se cambia el formato de codificación de caracteres en Ubuntu la aplicación no reconocía los caracteres del Español como las tildes y la ñ. Sin embargo, si se cambia esta codificación en Windows ocurría entonces que dichos caracteres no se reconocían y al no cambiarlo si lo hacían. Por tanto se optó por comprobar si se estaba ejecutando la aplicación en Windows para cambiar o no la configuración de codificación de caracteres.
 
 \end{document}
