@@ -15,7 +15,7 @@ allSynonyms =
     [
         Synonyms "entrar" ["entrar", "ingresar", "pasar", "acceder", "adentrarse"],
         Synonyms "tomar" ["tomar", "coger", "asir", "agarrar", "atrapar"],
-        Synonyms "cortar" ["cortar", "amputar", "partir", "podar", "picar"], 
+        Synonyms "cortar" ["cortar", "partir", "podar", "picar", "pelar"], 
         Synonyms "hablar" ["hablar", "conversar", "dialogar", "charlar", "platicar"],
         Synonyms "convencer" ["convencer", "persuadir", "demostrar"],
         Synonyms "huir" ["huir", "desaparecer", "escapar", "escabullir", "desertar", "rehuir"], 
@@ -45,7 +45,7 @@ allSynonyms =
         Synonyms "casa" ["casa", "residencia", "vivienda", "domicilio", "morada"],
         Synonyms "habitación" ["habitación", "cuarto", "aposento", "dormitorio", "salón", "alcoba"],
         Synonyms "cuchillo" ["cuchillo", "puñal", "navaja", "daga"],
-        Synonyms "cabellera" ["cabellera", "pelo", "melena"], 
+        Synonyms "cabello" ["cabellera", "pelo", "melena", "cabello"], 
         Synonyms "fiel" ["fiel", "constante"], 
         Synonyms "Sift" ["Sift"],
         Synonyms "Thor" ["Thor"],

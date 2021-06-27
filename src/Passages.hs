@@ -29,11 +29,11 @@ convinceThorPassage = Passage 7 "Le dices que puedes viajar al mundo de los enan
 
 runThorPassage = Passage 8 "Al intentar huir de Thor te tropiezas con el dios Freyr que al ver a Thor persiguiéndote decide detenerte. Thor le cuenta a Frey y este lo comprueba al ver que llevas la cabellera escondida en una bolsa. Entre ambos te exigen reparar el daño que has hecho, si no te castigarán entre los dos. Para esto tendrás que viajar al mundo de los enanos o negarte y asumir las consecuencias." ["huir"] [negateTravelRunPassage, travelPassage]
 
-negateTravelRunPassage = Passage 9 "Como te niegas a enmendar tu crimen. Thor y Freyr te castigan y tan duro te golpea Thor enfurecido que acabas muriendo. Llegaste a tu fin." ["no","mundo","enanos"] []
+negateTravelRunPassage = Passage 9 "Como te niegas a enmendar tu crimen. Thor y Freyr te castigan y tan duro te golpea Thor enfurecido que acabas muriendo. Llegaste a tu fin." ["no", "viajar","mundo","enanos"] []
 
 fightThorPassage = Passage 10 "Odín, dios supremo de Asgard, los ve peleando en medio de la plaza y decide intervenir. Al explicarle Thor lo que había pasado te exige ir al mundo de los enanos para conseguirle una mejor cabellera a Sift y que si no lo haces serás desterrado de Asgard por tu crimen." ["enfrentar"] [negateTravelFightPassage, travelPassage]
 
-negateTravelFightPassage = Passage 11 "Como te niegas a reparar el daño que has hecho Odín te destierra. Thor aún no complacido con la decisión de Odín te persigue y ambos se enfrentan muriendo los dos en igualado combate. Así ha llegado tu fin." ["no","mundo","enanos"] []
+negateTravelFightPassage = Passage 11 "Como te niegas a reparar el daño que has hecho Odín te destierra. Thor aún no complacido con la decisión de Odín te persigue y ambos se enfrentan muriendo los dos en igualado combate. Así ha llegado tu fin." ["no", "viajar", "mundo","enanos"] []
 
 travelPassage = Passage 12 "Llegas al mundo de los enanos cuyo nombre es Svartalfaheim, allí te encuentras a los hermanos Brok y Sidri. Deberías intentar hablar con alguno de ellos." ["viajar", "mundo", "enanos"] [firstTalkBrokPassage,firstTalkSidriPassage]
 
@@ -41,15 +41,15 @@ firstTalkBrokPassage = Passage 13 "Hablas con Brok y le pides que haga una cabal
 
 firstTalkSidriPassage = Passage 14 "Hablas con Sidri y le pides que haga una caballera para Sift pero este se rehusa argumentando que no tiene porqué hacerlo. Quizás Brok esté de mejor humor" ["hablar","Sidri"] [secondTalkBrokPassage]
 
-secondTalkBrokPassage = Passage 15 "Brok te responde de igual forma. Vaya parece que hoy no es tu día. Sin embargo recuerdas que los enanos son muy competitivos cuando de forjar artículos se trata. Quizás puedas aprovecharte de esto." ["hablar","brok"] [competitionPassage]
+secondTalkBrokPassage = Passage 15 "Brok te responde de igual forma. Vaya parece que hoy no es tu día. Sin embargo recuerdas que los enanos son muy competitivos cuando de forjar artículos se trata. Quizás puedas aprovecharte de esto." ["hablar","Brok"] [competitionPassage]
 
-secondTalkSidriPassage = Passage 16 "Sidri te responde de igual forma. Vaya parece que hoy no es tu día. Sin embargo recuerdas que los enanos son muy competitivos cuando de forjar artículos se trata. Quizás puedas aprovecharte de esto." ["hablar","sidri"] [competitionPassage]
+secondTalkSidriPassage = Passage 16 "Sidri te responde de igual forma. Vaya parece que hoy no es tu día. Sin embargo recuerdas que los enanos son muy competitivos cuando de forjar artículos se trata. Quizás puedas aprovecharte de esto." ["hablar","Sidri"] [competitionPassage]
 
 competitionPassage = Passage 17 "Engañas a los enanos deiciéndoles que los dioses han organizado un concurso para ver quien forja los mejores artículos. Como resultado Brok fabrica la cabellera dorada de Sift, el barco Skidblandnes y la lanza Gungnir. Por su parte Sindri fabrica un cerdo con sedas de oro, la argolla de oro Draupnir y el martillo Mjolnir. Cada uno de estos tesoros tiene diferentes propiedades mágicas. Entonces los enanos te preguntan acerca del concurso pero tu bien sabes que no existe tal cual. Básicamente tus opciones se reducen a Asgard y convencer a los dioses de realizar el concurso improvisado o robarte los tesoros descaradamente." ["proponer","concurso"] [convinceAesirPassage, stealTreasuresPassage]
 
 convinceAesirPassage = Passage 18 "Viajas a Asgard y convences a Odín, Thor y Frey de que actúen como jueces. Ellos acceden. El concurso se realiza y se escoge el martillo Mjolnir como el mejor de los tesoros. Los tres dioses se reparten los tesoros entre ellos y todos quedan felices y contentos. Este capítulo ha terminado para pasar al siguiente escribe 'siguiente'" ["convencer"] [chapter2InicialPassage]
 
-stealTreasuresPassage = Passage 19 "Al tratar de robar los tesoros, los enanos te capturan y te atan a una roca con una soga irrompible. Producto de esto no podrás escapar y quedarás encadenado para siempre. Así has llegado a tu fín." ["robar"] []
+stealTreasuresPassage = Passage 19 "Al tratar de robar los tesoros, los enanos te capturan y te atan a una roca con una soga irrompible. Producto de esto no podrás escapar y quedarás encadenado para siempre. Así has llegado a tu fín." ["robar", "tesoros"] []
 
 --Chapter 2
 

@@ -18,7 +18,7 @@ main = do
     -- unless passage is a final passage do
     unless (length (nextPossiblePassages passage) == 0) $ do
         -- get user line
-        sentence <- getLine
+        sentence <- (putStr ">> " >> getLine)
         -- unless user dicide to end game do
         unless ((map toLower sentence) == "salir") $ do
             -- obtain next passage
