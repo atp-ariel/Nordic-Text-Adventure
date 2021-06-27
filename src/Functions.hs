@@ -2,8 +2,7 @@ module Functions
 (
     next,
     obtainPassage,
-    updatePassage,
-    find
+    changePassage
 ) where
 
 import Synonyms
@@ -28,19 +27,18 @@ next passage words | length list == 0 = passage
                    | otherwise = list !! 0
                    where list = filter (\x -> identifyKeywords x words) (nextPossiblePassages passage)
 
+-- Define actual passage as inicialPassage at start
 actualPassage :: IORef Passage
 actualPassage = unsafePerformIO(newIORef inicialPassage)
 {-# NOINLINE actualPassage #-}
 
+-- Change actual passage
 changePassage :: Passage->IO Passage
 changePassage passage = atomicModifyIORef' actualPassage (\p->(passage,passage))
 
+-- Obtain actual passage
 obtainPassage :: IO Passage
 obtainPassage = readIORef actualPassage
-
-updatePassage :: Passage -> Passage -> IO Passage
-updatePassage actualP nextP | (pid nextP) == (pid actualP) = (changePassage actualP)
-                            | otherwise = (changePassage nextP)
 
 -- Return a list of all synonyms of passage's keywords
 getSym :: Passage -> [[String]]

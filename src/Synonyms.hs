@@ -1,5 +1,3 @@
---NordicTextAdventure.hs
-
 module Synonyms (
     Synonyms,
     allSynonyms,

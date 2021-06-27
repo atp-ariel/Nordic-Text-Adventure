@@ -11,19 +11,27 @@ main = do
     -- define the encoder depending on the operating system
     setEncoding
     hSetBuffering stdout NoBuffering
+    -- obtain actual pasage
     passage <- obtainPassage
+    -- print actual passage text
     printStory (text passage)
-    unless (length (nextPossiblePassages passage)==0) $ do
-        sentence <- (putStr ">> " >> getLine)
-        unless ((map toLower sentence)=="salir") $ do
+    -- unless passage is a final passage do
+    unless (length (nextPossiblePassages passage) == 0) $ do
+        -- get user line
+        sentence <- getLine
+        -- unless user dicide to end game do
+        unless ((map toLower sentence) == "salir") $ do
+            -- obtain next passage
             let auxPassage = next passage (endBy " " sentence) 
+            -- if there is no progress keep actual passage, else update passage
             if (pid auxPassage) == (pid passage) then do
                 printError "Acción inválida o irreconocible. Quizás faltan palabras o la acción no es esperada. Chequea también la ortografía de las palabras. No avance"
                 main
             else do
-                updatePassage passage auxPassage
+                -- update passage
+                changePassage auxPassage
                 main
-    
+
 isWindows :: Bool
 isWindows = case buildOS of
     Windows -> True
