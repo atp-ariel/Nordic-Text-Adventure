@@ -55,7 +55,7 @@ allSynonyms =
         Synonyms "Bladr" ["Bladr"],
         Synonyms "inmortalidad" ["inmortalidad"],
         Synonyms "Sidri" ["Sidri"],
-        Synonyms "concurso" ["concurso", "competencia", "evento", "certamen", "examen", "prueba", "torneo", "competición"],
+        Synonyms "concurso" ["concurso", "competencia", "evento", "certamen", "examen", "prueba", "torneo", "competición", "competir"],
         Synonyms "dioses" ["dioses", "deidades", "divinidades"],
         Synonyms "Asgard" ["Asgard"],
         Synonyms "tesoros" ["tesoros", "fortunas", "bienes", "riquezas"],
