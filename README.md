@@ -39,3 +39,8 @@ To run the project enter the following line:
 ```
 make run
 ```
+
+# Contributors
+
+* [Ariel Alfonso Triana Pérez](https://github.com/ArielTriana)
+* [Carlos Toledo Silva](https://github.com/cts-crypto)
