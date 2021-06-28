@@ -48,11 +48,11 @@ SEGUNDO PROYECTO DE PROGRAMACIÓN DECLARATIVA
 	
 \section{Introducción}
 
-En el siguiente documento se realizará la presentación de la aplicación \textbf{Loki Text Adventure}. Para esto se divide el resto del documento en secciones. En una primera sección se presenta la historia elaborarda para la aplicación y en una posterior sección se explica cómo un usuario interactúa con la aplicación. Posteriormente se explica la implementación de la aplicación: estrategia que se siguió, descripción de los módulos implementados y cómo se aprovecharon las características propias de Haskell para dicha implementación.
+En el siguiente documento se realizará la presentación de la aplicación \textbf{Loki Text Adventure}. Para esto se divide el resto del documento en secciones. En una primera sección se presenta la historia elaborada para la aplicación y en una posterior sección se explica cómo un usuario puede interactuar con la aplicación. Posteriormente se explica la implementación de la aplicación: estrategia que se siguió y descripción de los módulos implementados. Finalmente ilustraremos mediante im\'agenes una posible aventura que pudiera hacer el usuario.
 
 \section{Historia elaborada para la aplicación}
 
-La historia que se narra en la aplicación está basada en la mitología nórdica. El usuario asume el papel de Loki: un dios embaucador de esta mitología y uno de los dioses más conocidos. El usuario, metido en el papel de Loki, tomará parte en una historia en la que pasará por diferentes aventuras y dificultades, donde las decisiones que tome y los actos que realicen tendrán una influencia directa en la historia del mundo.
+La historia que se narra en la aplicación está basada en la mitología nórdica. El usuario asume el papel de Loki: un dios embaucador de esta mitología y uno de los dioses más conocidos. El usuario, metido en el papel de Loki, tomará parte en una historia en la que pasará por diferentes aventuras y dificultades, donde las decisiones que tome y los actos que realice tendrán una influencia directa en la historia del mundo.
 
 Válido aclarar que aunque la historia está basada en la mitología nórdica, muchos de los pasajes que en ella se narran no ocurren exactamente igual, ni siquiera en el orden correspondiente a como están realmente recogidos en la mitología. Otros muchos ni siquiera ocurrieron y son invención de los autores. De esta forma se ha adaptado la historia de Loki y otros personajes nórdicos para lograr hacer una historia entretenida y atractiva para el usuario.
 
@@ -70,7 +70,7 @@ Cuando se ejecuta la aplicación (ya compilada) lo primero que se ve es lo sigui
 	\end{center}
 \end{figure}
 
-Aquí es donde comienza la historia. A medida que el personaje avance en la historia le irán saliendo texto similares a estos. Para poder avanzar el usuario deberá utilizar la información mostrada en cada uno de los textos y dar una respuesta lógica y bien escrita mediante alguna acción. Es importante señalar que las acción se deben expresar mediante infinitivos: \textit{entrar}, \textit{aceptar}, \textit{hablar}, etc y que por supuesto estos se combinen con las otras palabras necesarias para elaborar una idea coherente. También es importante recalcar que, las acciones sobre el propio jugador deben ir seguidas del pronombre personal me; ejemplo: \textit{transformarme}, \textit{quedarme}, etc.
+Aquí es donde comienza la historia. A medida que el personaje avance en la historia le irán saliendo texto similares a estos. Para poder avanzar el usuario deberá utilizar la información mostrada en cada uno de los textos y dar una respuesta lógica y bien escrita mediante alguna acción. Es importante señalar que las acciones se deben expresar mediante infinitivos: \textit{entrar}, \textit{aceptar}, \textit{hablar}, etc y que por supuesto estos se combinen con las otras palabras necesarias para elaborar una idea coherente. También es importante recalcar que, las acciones sobre el propio jugador deben ir seguidas del pronombre personal me; ejemplo: \textit{transformarme}, \textit{quedarme}, etc.
 
 Por ejemplo, partiendo del texto inicial de la historia (Fig \ref{fig:init}) se puede hacer lo siguiente:
 
@@ -82,7 +82,7 @@ Por ejemplo, partiendo del texto inicial de la historia (Fig \ref{fig:init}) se 
 	\end{center}
 \end{figure}
 
-Obsérvese cómo al escribir una acción lógica correctamente se ha avanzado en la historia. Si por el contrario se escribe una acción sin sentido o no escrita correctamente (ya sea por palabras mal escritas o falta de las mismas), la aplicación puede que no reconozca lo que el usuario quiere decir y si ocurre este caso entonces se alertará con un mensaje y volverá a imprimir el último texto de la historia. A continuación se muestra un ejemplo:
+Obsérvese cómo al escribir una acción lógica correctamente se ha avanzado en la historia. Si por el contrario se escribe una acción sin sentido o no escrita correctamente (ya sea por palabras mal escritas o falta de las mismas), la aplicación puede que no reconozca lo que el usuario quiere decir. Si ocurre este caso entonces se alertará con un mensaje y se volverá a imprimir el último texto de la historia. A continuación se muestra un ejemplo:
 
 \begin{figure}[h]
 	\begin{center}
@@ -108,7 +108,7 @@ En este caso el jugador podrá escoger entre convencer, hablar o enfrentar a Tho
 
 \section{Implementación}
 
-A continuación se explica la estrategia de implementación de la aplicación, cómo se utilizaron las ventajas de Haskell como pattern matching en el desarrollo y se explica la funcionalidad de cada módulo de la aplicación.
+En esta secci\'on se explica la estrategia de implementación de la aplicación, as\'i como los m\'odulos implementados y su funcionalidad.
 
 \subsection{Estrategia de implementación}
 
@@ -123,6 +123,7 @@ La implementación de la aplicación, para mejor organización y comprensión, e
     \item[-] \textbf{Synonyms}: contiene la definición del tipo \verb|Synonyms|, y todos los sinónimos utilizados en la historia.
     \item[-] \textbf{Functions}: contiene  la implementación de las funciones que permiten llevar el pasaje actual, el análisis de la entrada del usuario y el cambio o no de un pasaje a otro.
     \item[-] \textbf{Loki-Text-Adventure}: que apoyándose de los otros módulos permite el funcionamiento de la aplicación.
+    \item[-] \textbf{Test}: implementa los casos de prueba de las funciones principales del proyecto.
 \end{enumerate}
  
 A continuación se verán al detalle estos módulos y su funcionamiento.
@@ -170,11 +171,50 @@ La función \verb|changePassage| recibe como parámetro un \verb|Passage| y lo q
 
 La función \verb|obtainPassage| se utiliza para poder obtener el pasaje actual en el que se encuentra la historia.
 
-La función \verb|next| se utiliza para obtener el siguiente pasaje de la historia dado el pasaje actual y la entrada del usuario. El funcionamiento es el siguiente se construye una lista que contiene los pasajes que son ``descendientes directos'' del pasaje actual en la historia, cuyas \verb|keywords| están de forma exacta o a través de sinónimos en la entrada del usuario. Si esta lista no contiene elementos entonces se devuelve el pasaje actual, pues la decisión del usuario no se corresponde con las opciones disponibles. Si la lista contiene elementos esto quiere decir que con esa entrada se puede alcanzar cualquiera de los pasajes en la lista por tanto se devuelve el primer elemento. Dicha función utiliza  \verb|identifyKeywords| que realiza el procedimiento de chequear si la entrada del usuario contiene las \verb|keywords| del pasaje o sus sinónimos. Para esto utiliza \verb|getSym| que devuelve todos los sinónimos de cada \verb|keywords| del pasaje, y además utiliza \verb|find| que devuelve un booleano indicando si una cadena de texto está en una lista de cadenas de texto.
+La función \verb|next| se utiliza para obtener el siguiente pasaje de la historia dado el pasaje actual y la entrada del usuario. El funcionamiento es el siguiente se construye una lista que contiene los pasajes que son ``descendientes directos'' del pasaje actual en la historia, cuyas \verb|keywords| están de forma exacta o a través de sinónimos en la entrada del usuario. Si esta lista no contiene elementos entonces se devuelve el pasaje actual, pues la decisión del usuario no se corresponde con las opciones disponibles. Si la lista contiene elementos esto quiere decir que con esa entrada se puede alcanzar cualquiera de los pasajes en la lista por tanto se devuelve el primer elemento. De esta forma se garantiza que siempre se devuelva un solo pasaje incluso cuando el usuario no fue preciso con lo que quer\'ia hacer. La función anterior utiliza  \verb|identifyKeywords| que realiza el procedimiento de chequear si la entrada del usuario contiene las \verb|keywords| del pasaje o sus sinónimos. Para esto utiliza \verb|getSym| que devuelve todos los sinónimos de cada \verb|keywords| del pasaje, y además utiliza \verb|find| que devuelve un booleano indicando si una cadena de texto está en una lista de cadenas de texto.
 
 
 \subsubsection{Módulo Loki-Text-Adventure}
 
-Este es el módulo principal de la aplicación. En este módulo primero se tienen dos funciones \verb|isWindows| y \verb|setEncoding|. La primera la se utiliza para saber si la aplicación se está ejecutando en Windows o no. La segunda se utiliza para cambiar  el formato de codificación de caracteres a UTF-8 en caso de que no se esté en Windows. Esto  se hace porque que uno de los autores programó en Windows 10 y el otro en Ubuntu 18.04 y si no se cambia el formato de codificación de caracteres en Ubuntu la aplicación no reconocía los caracteres del Español como las tildes y la ñ. Sin embargo, si se cambia esta codificación en Windows ocurría entonces que dichos caracteres no se reconocían y al no cambiarlo si lo hacían. Por tanto se optó por comprobar si se estaba ejecutando la aplicación en Windows para cambiar o no la configuración de codificación de caracteres.
+Este es el m\'odulo principal de la aplicaci\'on. En este m\'odulo se tienen dos funciones \verb|isWindows| y \verb|setEncoding|. La primera se utiliza para saber si la aplicaci\'on se est\'a ejecutando en Windows o no. La segunda se utiliza para cambiar el formato de codificaci\'on de caracteres a UTF-8 en caso de que no se esté en Windows. Esto se hace porque sucedió que uno de los autores program\'o en Windows 10 y el otro en Ubuntu 18.04 y si no se cambia el formato de codificaci\'on de caracteres en Ubuntu la aplicaci\'on no reconoc\'ia los caracteres del Español como las tildes y la ñ. Sin embargo si se cambia esta codificaci\'on en Windows ocurr\'ia entonces que dichos caracteres no se reconoc\'ian y al no cambiarlo si lo hac\'ian. Por tanto se opt\'o por comprobar si se estaba ejecutando la aplicaci\'on en Windows para cambiar o no la configuraci\'on de codificaci\'on de caracteres.
+
+Se tienen adem\'as dos funciones para auxiliar el proceso de imprimir textos en la consola: \verb|printStory| y \verb|printError|, estas funciones reciben un texto y lo imprimen en color verde y rojo respectivamente. Para imprimir en colores se usan los códigos ANSI siguientes: Verde = \verb|\x1b[32m|, Rojo = \verb|\x1b[31m|, y para volver al estilo normal se utiliza el código \verb|\x1b[0m|.
+
+Se tiene tambi\'en la funci\'on \verb|main|, la principal de toda la aplicaci\'on. En esta funci\'on primeramente en dependencia del sistema operativo se cambia o no la configuraci\'on de codificaci\'on de caracteres. Luego se obtiene el pasaje actual mediante la funci\'on \verb|obtainPassage|, se guarda en la variable \verb|passage| y de este se imprime su texto correspondiente utilizando la función \verb|printStory|. Luego, a menos que este sea un pasaje final, se espera a que el usuario propicie una entrada. En caso de ser un pasaje final se termina la ejecuci\'on. Entonces si la entrada propiciada por el usuario es \verb|salir| se detiene la ejecuci\'on; en cualquier otro caso se pasa a obtener el siguiente pasaje mediante la funci\'on \verb|next| y se guarda en la variable \verb|auxPassage|. Entonces se comprueba si el pasaje actual y el hallado por la funci\'on coinciden. De ser as\'i es porque el usuario no tecleó una entrada que permitiera el avance a un nuevo pasaje y en este caso se le escribe un mensaje de advertencia con las posibles causas del fracaso en el avance utilizando \verb|printError| y se llama al m\'etodo \verb|main|. En caso de que no coincidan, es porque hubo un avance y por tanto se actualiza el estado actual mediante la funci\'on \verb|changePassage| utilizando como par\'ametro \verb|auxPassage|. Luego de esto se llama al m\'etodo \verb|main|. Obs\'ervese que la aplicaci\'on solo termina su ejecuci\'on si se alcanza un pasaje final o el usuario tecla la palabra \verb|salir|.   
+
+\subsubsection{Módulo Test}
+
+Este módulo implementa los casos de prueba de las funciones principales del proyecto como son:  \verb|find|, \verb|next|, \verb|getSym|, entre otras. Para esto se utilizan dos paquetes de Haskell: 
+
+\begin{enumerate}
+    \item[-] \textbf{Test.Tasty} el cual para instalarlo debe ejecutarse el siguiente comando: \verb|cabal install tasty|
+    \item[-]  \textbf{Test.Tasty.HUnit} que para ser instalado debe ejecutar \verb|cabal install tasty-hunit|
+\end{enumerate}
+
+En este módulo se tiene una función \verb|main| que ejecuta todos los \verb|TestTree| definidos en el mismo. Se tienen tres (3) \verb|TestTree|, el primero prueba que la función \verb|find| funcione como es debido; el segundo prueba que \verb|getSym| seleccione los sinónimos de las \verb|keywords| del pasaje; y el último prueba que dado un pasaje y una cadena se avance hacia el próximo pasaje.
+
+Los casos de prueba son los siguientes: buscar una cadena en una lista de cadenas y devolver que si la encontró o no, hacer búsquedas que no sean case sensitive, y encontrar la cadena exacta y no subcadenas. Además se tiene que los sinónimos de un pasaje sin \verb|keywords| es el vacío ($\emptyset$), y obtener los sinónimos de las \verb|keywords| del segundo pasaje. Y dada la cadena ``entrar a la vivienda'' y el pasaje inicial, verificar que se obtenga el siguiente pasaje.
+
+Para ejecutar los casos de prueba debe poseer Make y ejecutar el siguiente comando \verb|make test|.
+
+\section{Ejemplo de una partida completa}
+
+A continuaci\'on se ilustra mediante im\'agenes el desarrollo de una posible aventura completa.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width =15.0cm]{./img/Historia1.png}
+		\includegraphics[width =15.0cm]{./img/Historia2.png}
+		
+	\end{center}
+\end{figure}
+
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width =15.0cm]{./img/Historia3.png}
+		\includegraphics[width =15.0cm]{./img/Historia4.png}
+	\end{center}
+\end{figure}
 
 \end{document}
