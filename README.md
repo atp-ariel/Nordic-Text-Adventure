@@ -1,4 +1,4 @@
-# Loki-Text-Adventure
+# [Loki-Text-Adventure](https://github.com/ArielTriana/Nordic-Text-Adventure/)
 
 A text adventure based on Nordic mythology. Final declarative programming test
 
