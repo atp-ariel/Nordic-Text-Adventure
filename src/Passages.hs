@@ -18,7 +18,7 @@ inicialPassage = Passage 1 "Bienvenido a Loki Text Adventure\n\nCapítulo 1\nEre
 
 housePassage = Passage 2 "Al entrar reconoces que es la casa del dios Thor y su esposa Sift, la cual parece estar en su habitación." ["entrar", "casa"] [roomPassage]
 
-roomPassage = Passage 3 "Cuando entras ves a Sift profundamente dormida y te quedas deslumbrado por su hermosa cabellera y sientes un deseo enorme por poseer su cabello. Ves un cuchillo en la mesa." ["entrar","habitación"] [knifePassage]
+roomPassage = Passage 3 "Cuando entras ves a Sift profundamente dormida, te quedas deslumbrado por su hermosa cabellera dorada y sientes un deseo enorme por poseer su cabello. Ves un cuchillo en la mesa." ["entrar","habitación"] [knifePassage]
 
 knifePassage = Passage 4 "Tienes el cuchillo en la mano." ["tomar","cuchillo"] [cutPassage] 
 
