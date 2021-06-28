@@ -28,4 +28,4 @@ roomSymTest = testCase "Get synonyms of RoomPassages's keywords" $ assertEqual [
 -- Change passages
 managerPassagesTests = testGroup "Change passage unit test" [changeTest]
 
-changeTest = testCase "Change to the next passage" $ assertEqual [] (pid $ head (nextPossiblePassages inicialPassage)) (pid $ next inicialPassage ["entrar", "a", "la", "casa"])
+changeTest = testCase "Change to the next passage" $ assertEqual [] (pid $ head (nextPossiblePassages inicialPassage)) (pid $ next inicialPassage ["entrar", "a", "la", "vivienda"])

@@ -123,6 +123,7 @@ La implementación de la aplicación, para mejor organización y comprensión, e
     \item[-] \textbf{Synonyms}: contiene la definición del tipo \verb|Synonyms|, y todos los sinónimos utilizados en la historia.
     \item[-] \textbf{Functions}: contiene  la implementación de las funciones que permiten llevar el pasaje actual, el análisis de la entrada del usuario y el cambio o no de un pasaje a otro.
     \item[-] \textbf{Loki-Text-Adventure}: que apoyándose de los otros módulos permite el funcionamiento de la aplicación.
+    \item[-] \textbf{Test}: implementa los casos de prueba de las funciones principales del proyecto.
 \end{enumerate}
  
 A continuación se verán al detalle estos módulos y su funcionamiento.
@@ -181,10 +182,24 @@ Se tienen adem\'as dos funciones para auxiliar el proceso de imprimir textos en 
 
 Se tiene tambi\'en la funci\'on \verb|main|, la principal de toda la aplicaci\'on. En esta funci\'on primeramente en dependencia del sistema operativo se cambia o no la configuraci\'on de codificaci\'on de caracteres. Luego se obtiene el pasaje actual mediante la funci\'on \verb|obtainPassage|, se guarda en la variable \verb|passage| y de este se imprime su texto correspondiente utilizando la función \verb|printStory|. Luego, a menos que este sea un pasaje final, se espera a que el usuario propicie una entrada. En caso de ser un pasaje final se termina la ejecuci\'on. Entonces si la entrada propiciada por el usuario es \verb|salir| se detiene la ejecuci\'on; en cualquier otro caso se pasa a obtener el siguiente pasaje mediante la funci\'on \verb|next| y se guarda en la variable \verb|auxPassage|. Entonces se comprueba si el pasaje actual y el hallado por la funci\'on coinciden. De ser as\'i es porque el usuario no tecleó una entrada que permitiera el avance a un nuevo pasaje y en este caso se le escribe un mensaje de advertencia con las posibles causas del fracaso en el avance utilizando \verb|printError| y se llama al m\'etodo \verb|main|. En caso de que no coincidan, es porque hubo un avance y por tanto se actualiza el estado actual mediante la funci\'on \verb|changePassage| utilizando como par\'ametro \verb|auxPassage|. Luego de esto se llama al m\'etodo \verb|main|. Obs\'ervese que la aplicaci\'on solo termina su ejecuci\'on si se alcanza un pasaje final o el usuario tecla la palabra \verb|salir|.   
 
+\subsubsection{Módulo Test}
+
+Este módulo implementa los casos de prueba de las funciones principales del proyecto como son:  \verb|find|, \verb|next|, \verb|getSym|, entre otras. Para esto se utilizan dos paquetes de Haskell: 
+
+\begin{enumerate}
+    \item[-] \textbf{Test.Tasty} el cual para instalarlo debe ejecutarse el siguiente comando: \verb|cabal install tasty|
+    \item[-]  \textbf{Test.Tasty.HUnit} que para ser instalado debe ejecutar \verb|cabal install tasty-hunit|
+\end{enumerate}
+
+En este módulo se tiene una función \verb|main| que ejecuta todos los \verb|TestTree| definidos en el mismo. Se tienen tres (3) \verb|TestTree|, el primero prueba que la función \verb|find| funcione como es debido; el segundo prueba que \verb|getSym| seleccione los sinónimos de las \verb|keywords| del pasaje; y el último prueba que dado un pasaje y una cadena se avance hacia el próximo pasaje.
+
+Los casos de prueba son los siguientes: buscar una cadena en una lista de cadenas y devolver que si la encontró o no, hacer búsquedas que no sean case sensitive, y encontrar la cadena exacta y no subcadenas. Además se tiene que los sinónimos de un pasaje sin \verb|keywords| es el vacío ($\emptyset$), y obtener los sinónimos de las \verb|keywords| del segundo pasaje. Y dada la cadena ``entrar a la vivienda'' y el pasaje inicial, verificar que se obtenga el siguiente pasaje.
+
+Para ejecutar los casos de prueba debe poseer Make y ejecutar el siguiente comando \verb|make test|.
 
 \section{Ejemplo de una partida completa}
 
-A continuaci\'on ilustraremos mediante im\'agenes el desarrollo de una posible aventura completa.
+A continuaci\'on se ilustra mediante im\'agenes el desarrollo de una posible aventura completa.
 
 \begin{figure}[h]
 	\begin{center}
